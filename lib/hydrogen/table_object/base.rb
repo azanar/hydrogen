@@ -2,6 +2,9 @@ module Hydrogen
   class TableObject
     module Base
       def initialize(model)
+        if model.kind_of?(Hydrogen::TableObject::Base)
+          raise
+        end
         @model = model
       end
 

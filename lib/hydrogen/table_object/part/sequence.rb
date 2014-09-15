@@ -1,3 +1,4 @@
+require 'hydrogen/model'
 require 'hydrogen/table_object/part'
 
 module Hydrogen
@@ -6,6 +7,9 @@ module Hydrogen
       class Sequence
         include Enumerable
         def initialize(model, parts, opts = {})
+          unless model.kind_of?(Hydrogen::Model)
+            raise
+          end
           @model = model
           @parts = parts
         end
