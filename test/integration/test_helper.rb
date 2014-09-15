@@ -1,7 +1,16 @@
+require 'coveralls'
+
 if ENV["ENABLE_SIMPLE_COV"]
   require 'simplecov'
-  require File.expand_path('../../simplecov_helper', __FILE__)
-  SimpleCov.start 'hydrogen'
+  SimpleCov.start do
+    add_group "Lib", "lib"
+    add_filter "/test/"
+    command_name "Integration Tests"
+    formatter SimpleCov::Formatter::MultiFormatter[
+      SimpleCov::Formatter::HTMLFormatter,
+      Coveralls::SimpleCov::Formatter
+    ]
+  end
 end
 
 require 'test/unit'
