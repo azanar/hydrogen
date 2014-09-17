@@ -21,7 +21,7 @@ Or install it yourself as:
 API Documentation
 -------------
 
-See [RubyDoc](http://rubydoc.info/github/azanar/quasar/index)
+See [RubyDoc](http://rubydoc.info/github/azanar/hydrogen/index)
 
 Contributors
 ------------
