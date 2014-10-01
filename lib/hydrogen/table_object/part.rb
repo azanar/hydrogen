@@ -11,6 +11,9 @@ module Hydrogen
         super(model)
       end
 
+      def file
+      end
+
       def name
         "#{super}.#{@chunk}"
       end

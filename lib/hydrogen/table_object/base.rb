@@ -3,7 +3,7 @@ module Hydrogen
     module Base
       def initialize(model)
         if model.kind_of?(Hydrogen::TableObject::Base)
-          raise
+          raise "#{model.inspect} is not a valid model to get thrown."
         end
         @model = model
       end
@@ -16,8 +16,12 @@ module Hydrogen
         @model.name
       end
 
+      def url
+        URI("#{@model.name}/#{name}.csv")
+      end
+
       def path
-        @path ||= "#{@model.name}/#{name}.psv.gz"
+        @path ||= url
       end
     end
   end
