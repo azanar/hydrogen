@@ -17,15 +17,6 @@ class Hydrogen::TableObject::Part::Test < Test::Unit::TestCase
 
     assert_equal res, URI('mock_table_name/mock_table_name.1.csv')
   end
-
-  test "#path should cache" do
-    @mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
-    anterior = @table_object.path
-
-    posterior = @table_object.path
-
-    assert_equal anterior, posterior
-  end
 end
 
 
