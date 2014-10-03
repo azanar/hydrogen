@@ -21,6 +21,8 @@ module Hydrogen
       end
 
       def path
+        Hydrogen.logger.warn("Hydrogen::TableObject#path is deprecated. Please use #url.")
+        Hydrogen.logger.debug("Called by #{caller.join("\n")}")
         @path ||= url
       end
     end
