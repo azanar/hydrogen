@@ -17,7 +17,7 @@ module Hydrogen
       end
 
       def url
-        URI("#{@model.name}/#{name}.csv")
+        @url ||= URI("#{@model.name}/#{name}.csv")
       end
 
       def path

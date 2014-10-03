@@ -13,7 +13,7 @@ class Hydrogen::TableObject::Part::Test < Test::Unit::TestCase
 
   test "#path" do
     @mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
-    res = @table_object.path
+    res = @table_object.url
 
     assert_equal res, URI('mock_table_name/mock_table_name.1.csv')
   end

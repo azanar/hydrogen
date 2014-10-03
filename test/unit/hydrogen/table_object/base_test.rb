@@ -15,16 +15,17 @@ class Hydrogen::TableObject::Base::Test < Test::Unit::TestCase
     @table_object = mock_table_object_klass.new(@mock_table_object)
   end
 
-  test "#path" do
+  test "#url" do
     @mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
-    @table_object.path
+    @table_object.url
   end
 
   test "#path should cache" do
     @mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
-    anterior = @table_object.path
 
-    posterior = @table_object.path
+    anterior = @table_object.url
+
+    posterior = @table_object.url
 
     assert_equal anterior, posterior
   end

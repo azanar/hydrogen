@@ -15,7 +15,7 @@ class Hydrogen::IntegrationTest < Test::Unit::TestCase
   test "singular" do
     to = Hydrogen::TableObject.new(@model)
 
-    assert_equal to.path, URI("foo/foo.csv")
+    assert_equal to.url, URI("foo/foo.csv")
   end
 
   test "parts" do
