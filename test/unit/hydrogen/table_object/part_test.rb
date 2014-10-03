@@ -15,7 +15,7 @@ class Hydrogen::TableObject::Part::Test < Test::Unit::TestCase
     @mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
     res = @table_object.path
 
-    assert_equal res, 'mock_table_name/mock_table_name.1.psv.gz'
+    assert_equal res, URI('mock_table_name/mock_table_name.1.csv')
   end
 
   test "#path should cache" do
