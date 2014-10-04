@@ -1,3 +1,5 @@
+require 'logger'
+
 require "hydrogen/model"
 require "hydrogen/table_object"
 require "hydrogen/table_object/part"
