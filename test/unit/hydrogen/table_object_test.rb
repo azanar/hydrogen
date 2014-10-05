@@ -8,8 +8,14 @@ class Hydrogen::TableObjectTest < Test::Unit::TestCase
     @mock_table_object = mock
     @mock_table_object_name = "mock_table_name"
 
-    @mock_table_object.expects(:name).returns(@mock_table_object_name)
+    #@mock_table_object.expects(:name).returns(@mock_table_object_name)
 
-    @table_object = Hydrogen::TableObject.new(@mock_table_object)
+    uri = URI("file:///tmp/foo")
+
+    @table_object = Hydrogen::TableObject.new(@mock_table_object, uri)
+  end
+  test "#url" do
+    #@mock_table_object.expects(:name).twice.returns(@mock_table_object_name)
+    @table_object.url
   end
 end

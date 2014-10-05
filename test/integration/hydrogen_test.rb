@@ -13,18 +13,18 @@ class Hydrogen::IntegrationTest < Test::Unit::TestCase
 
   end
   test "singular" do
-    to = Hydrogen::TableObject.new(@model)
+    to = Hydrogen::TableObject.new(@model, URI("file://tmp/foo/bar.csv.gz"))
 
-    assert_equal to.url, URI("foo/foo.csv")
+    assert_equal to.url, URI("file://tmp/foo/bar.csv.gz")
   end
 
   test "parts" do
     parts = 5.times.map do |x|
-      Hydrogen::TableObject::Part.new(x, @model)
+      Hydrogen::TableObject.new(@model, URI("file://tmp/foo/bar.csv.gz"))
     end
 
-    sequence = Hydrogen::TableObject::Part::Sequence.new(@model, parts)
+    sequence = Hydrogen::TableObject::Collection.new(@model, URI("file://tmp/foo"), parts)
 
-    assert_equal sequence.path, "foo/foo"
+    assert_equal sequence.url, URI("file://tmp/foo")
   end
 end

@@ -1,14 +1,6 @@
 module Hydrogen
   class TableObject
-    class Collection
-      def initialize(model, root, parts)
-        @model = model
-        @root = root
-        @parts = parts
-      end
-
-      attr_reader :parts
-
+    module ModelAttributes
       def partition?
         @model.partition?
       end
@@ -19,10 +11,6 @@ module Hydrogen
 
       def columns
         @model.columns
-      end
-
-      def url
-        @root
       end
     end
   end
