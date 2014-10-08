@@ -1,3 +1,5 @@
+require 'hydrogen/model'
+
 module Hydrogen
   class TableObject
     def initialize(model, uri)
