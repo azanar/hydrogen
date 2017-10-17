@@ -7,8 +7,6 @@ env:
 script: "bundle exec rake test:$TEST_SUITE"
 
 rvm:
-  - "1.9.3"
-  - "2.1.2"
-  - "ruby-head"
-  - "rbx-2"
+    - "2.4.3"
+    - "jruby"
 
